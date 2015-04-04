@@ -567,7 +567,6 @@ class CWrapper:
         self._estimate_P_MEAN_Coverage.argtypes = [c.POINTER(c.c_uint32), c.POINTER(BM_coverageType_C), c.c_uint32]
         self._estimate_P_MEAN_Coverage.restype = c.c_float
 
-
         self._estimate_P_MEDIAN_Coverage = self.libPMBam.estimate_P_MEDIAN_Coverage
         self._estimate_P_MEDIAN_Coverage.argtypes = [c.POINTER(c.c_uint32), c.POINTER(BM_coverageType_C), c.c_uint32]
         self._estimate_P_MEDIAN_Coverage.restype = c.c_float

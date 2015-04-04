@@ -179,6 +179,8 @@ def doWork( args ):
             ct = CT.P_MEAN_OUTLIER
             if cr is None:
                 cr = [BM_def_outlier_range]
+        elif args.coverage_mode == 'pvariance':
+            ct = CT.P_VARIANCE
 
         # set this to 0 here so we don't confuse matters downstream
         if cr is None:
@@ -205,7 +207,7 @@ def doWork( args ):
             doInserts = True
         else:
             doInserts = (args.inserts != "")
-
+             
         try:
             ret = BP.parseBams(args.bamfiles,
                                doLinks=(args.links != ""),

@@ -43,11 +43,13 @@ float BM_mean(uint32_t * values, uint32_t size)
 
 float BM_stdDev(uint32_t * values, uint32_t size, float m)
 {
-    return sqrt(BM_stdDev(values, size, m));
+    return sqrt(BM_variance(values, size, m));
 }
 
 float BM_variance(uint32_t * values, uint32_t size, float m)
 {
+  printf("Found mean %2.2f\n",m);
+
     float sum = 0;
     int i = 0;
     if(m == -1)
@@ -55,6 +57,7 @@ float BM_variance(uint32_t * values, uint32_t size, float m)
     for(i = 0; i < size; ++i) {
         sum += pow((float)*(values + i) - m, 2);
     }
+  printf("sum %1.2f size %1.2f\n", sum, (float)size);
     return sum/(float)size;
 }
 

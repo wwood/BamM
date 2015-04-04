@@ -313,6 +313,9 @@ int parseCoverageAndLinks(int doLinks,
     }
 
     // initialise the BFI struct
+  printf("covtype %i\n", coverageType->type);
+  printf("covtype up %f\n", coverageType->upperCut);
+  printf("covtype down %f\n", coverageType->lowerCut);
     initBFI(BFI,
             h,
             numBams,

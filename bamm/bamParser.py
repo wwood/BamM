@@ -427,6 +427,10 @@ class BamParser:
         BCT.lowerCut = float(self.coverageType.cLower)
         pBCT = c.POINTER(BM_coverageType_C)
         pBCT = c.pointer(BCT)
+        print 'bct type', BCT.type
+        print 'bct lower', BCT.upperCut
+        print 'bct upper', BCT.lowerCut
+        
 
         bamfiles_c_array = (c.c_char_p * 1)()
         bamfiles_c_array[:] = [self.bamFiles[bid]]

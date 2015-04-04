@@ -57,6 +57,7 @@ void estimateCoverages(float * coverageValues,
                        uint32_t numBams
 ) {
     CovFunc cf = 0;
+  printf("Found type: %i\n",covType->type);
     switch(covType->type) {
         case CT_COUNT:
             cf = estimate_COUNT_Coverage;
@@ -215,5 +216,5 @@ float estimate_P_VARIANCE_Coverage(uint32_t * pileupValues,
                                    BM_coverageType * covType,
                                    uint32_t contigLength
 ) {
-    return BM_variance(pileupValues, contigLength, BM_mean(pileupValues, contigLength));
+    return BM_variance(pileupValues, contigLength, -1);
 }
