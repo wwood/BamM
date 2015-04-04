@@ -43,9 +43,19 @@ float BM_mean(uint32_t * values, uint32_t size);
  * @param  values       array of (integer) values
  * @param  size         size of values array
  * @param  m            mean of the values array
- * @return float        the caluclated standard deviation
+ * @return float        the calculated standard deviation
  */
 float BM_stdDev(uint32_t * values, uint32_t size, float m);
+
+/*!
+ * @abstract Calculate the variance of an array values
+ *
+ * @param  values       array of (integer) values
+ * @param  size         size of values array
+ * @param  m            mean of the values array
+ * @return float        the calculated variance
+ */
+float BM_variance(uint32_t * values, uint32_t size, float m);
 
 /*!
  * @abstract Calculate the standard deviations of an array values
